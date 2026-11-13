@@ -127,4 +127,4 @@ install.bat      :: 安装当前构建
 
 ## License
 
-当前仓库未添加 LICENSE，默认保留所有权利。如需在其他项目中使用，请先联系作者。
+[MIT](LICENSE) © 2026 xiaohao
