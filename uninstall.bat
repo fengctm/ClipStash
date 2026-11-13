@@ -9,16 +9,12 @@ if not defined LOCALAPPDATA (
 
 set "TARGET_DIR=%LOCALAPPDATA%\ClipStash"
 set "TARGET=%TARGET_DIR%\ClipStash.exe"
+set "LOCAL_EXE=%~dp0ClipStash.exe"
 
 echo [ClipStash] Stopping...
-if exist "%TARGET%" (
-    "%TARGET%" --uninstall
-) else (
-    if exist "build\ClipStash.exe" "build\ClipStash.exe" --quit >nul 2>&1
-)
-
-rem Also covers a daemon started from build\ or a failed --uninstall.
-if exist "build\ClipStash.exe" "build\ClipStash.exe" --quit >nul 2>&1
+if exist "%TARGET%" "%TARGET%" --uninstall
+if exist "%LOCAL_EXE%" "%LOCAL_EXE%" --quit >nul 2>&1
+if exist "%~dp0build\ClipStash.exe" "%~dp0build\ClipStash.exe" --quit >nul 2>&1
 
 rem Ensure the autostart value is gone even if --uninstall returned an error.
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v ClipStash /f >nul 2>&1
