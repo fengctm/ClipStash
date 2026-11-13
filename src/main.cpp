@@ -1,3 +1,11 @@
+/**
+ * ClipStash - clipboard image to PNG file
+ *
+ * Copyright (c) 2026 xiaohao
+ * Author: xiaohao
+ * GitHub: https://github.com/fengctm
+ */
+
 #include "clipstash.h"
 
 #include <cwchar>
